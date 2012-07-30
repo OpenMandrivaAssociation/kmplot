@@ -1,13 +1,13 @@
-Name: kmplot
-Summary: A mathematical function plotter
-Version: 4.8.97
-Release: 1
-Group: Graphical desktop/KDE
-License: GPLv2 GFDL
-URL: http://edu.kde.org/kmplot
-Source: ftp://ftp.kde.org/pub/kde/unstable/%version/src/%name-%version.tar.xz
-BuildRequires: kdelibs4-devel >= 2:%{version}
-Conflicts: kdeedu4-devel < 4.6.90
+Name:		kmplot
+Summary:	A mathematical function plotter
+Version:	4.8.97
+Release:	1
+Group:		Graphical desktop/KDE
+License:	GPLv2 GFDL
+URL:		http://edu.kde.org/kmplot
+Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{name}-%{version}.tar.xz
+BuildRequires:	kdelibs4-devel
+Conflicts:	kdeedu4-devel < 4.6.90
 
 %description
 KmPlot is a mathematical function plotter for the KDE-Desktop.
@@ -20,28 +20,27 @@ high precision in correct scale.
 
 %files
 %doc COPYING COPYING.DOC TODO
-%_kde_appsdir/kmplot
-%_kde_bindir/kmplot
-%_kde_libdir/kde4/libkmplotpart.so
-%_kde_iconsdir/*/*/apps/kmplot.*
-%_kde_datadir/applications/kde4/kmplot.desktop
-%_kde_datadir/config.kcfg/kmplot.kcfg
-%_kde_services/kmplot_part.desktop
-%_kde_docdir/HTML/*/kmplot
-%_kde_mandir/man1/kmplot.1.*
-%_datadir/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
-%_datadir/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
-%_datadir/dbus-1/interfaces/org.kde.kmplot.Parser.xml
-%_datadir/dbus-1/interfaces/org.kde.kmplot.View.xml
+%{_kde_appsdir}/kmplot
+%{_kde_bindir}/kmplot
+%{_kde_libdir}/kde4/libkmplotpart.so
+%{_kde_iconsdir}/*/*/apps/kmplot.*
+%{_kde_applicationsdir}/kmplot.desktop
+%{_kde_datadir}/config.kcfg/kmplot.kcfg
+%{_kde_services}/kmplot_part.desktop
+%{_kde_docdir}/HTML/*/kmplot
+%{_kde_mandir}/man1/kmplot.1.*
+%{_datadir}/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kmplot.Parser.xml
+%{_datadir}/dbus-1/interfaces/org.kde.kmplot.View.xml
 
 #----------------------------------------------------------------------
 
 %prep
 %setup -q
-%apply_patches
 
 %build
-%cmake_kde4	
+%cmake_kde4
 %make
 
 %install
