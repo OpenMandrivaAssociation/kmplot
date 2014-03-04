@@ -1,6 +1,6 @@
 Name:		kmplot
 Summary:	A mathematical function plotter
-Version:	4.12.2
+Version:	4.12.3
 Release:	1
 Group:		Graphical desktop/KDE
 License:	GPLv2 GFDL
@@ -47,6 +47,9 @@ high precision in correct scale.
 %makeinstall_std -C build
 
 %changelog
+* Tue Mar 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.12.3-1
+- New version 4.12.3
+
 * Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.12.2-1
 - New version 4.12.2
 
