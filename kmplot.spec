@@ -1,11 +1,11 @@
-Name:		kmplot
 Summary:	A mathematical function plotter
-Version:	4.13.3
-Release:	1
+Name:		kmplot
+Version:	4.14.3
+Release:	2
+License:	GPLv2+
 Group:		Graphical desktop/KDE
-License:	GPLv2 GFDL
-URL:		http://edu.kde.org/kmplot
-Source:		ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+Url:		http://edu.kde.org/kmplot
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 Conflicts:	kdeedu4-devel < 4.6.90
 
@@ -20,21 +20,22 @@ high precision in correct scale.
 
 %files
 %doc COPYING COPYING.DOC TODO
+%doc %{_kde_docdir}/HTML/*/kmplot
+%{_kde_applicationsdir}/kmplot.desktop
 %{_kde_appsdir}/kmplot
 %{_kde_bindir}/kmplot
-%{_kde_libdir}/kde4/libkmplotpart.so
-%{_kde_iconsdir}/*/*/apps/kmplot.*
-%{_kde_applicationsdir}/kmplot.desktop
+%{_kde_datadir}/appdata/kmplot.appdata.xml
 %{_kde_datadir}/config.kcfg/kmplot.kcfg
-%{_kde_services}/kmplot_part.desktop
-%{_kde_docdir}/HTML/*/kmplot
+%{_kde_iconsdir}/*/*/apps/kmplot.*
+%{_kde_libdir}/kde4/libkmplotpart.so
 %{_kde_mandir}/man1/kmplot.1.*
+%{_kde_services}/kmplot_part.desktop
 %{_datadir}/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kmplot.Parser.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kmplot.View.xml
 
-#----------------------------------------------------------------------
+#----------------------------------------------------------------------------
 
 %prep
 %setup -q
@@ -47,6 +48,16 @@ high precision in correct scale.
 %makeinstall_std -C build
 
 %changelog
+* Tue Nov 11 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.3-1
+- New version 4.14.3
+
+* Wed Oct 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.2-1
+- New version 4.14.2
+
+* Mon Sep 29 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.14.1-1
+- New version 4.14.1
+- Update files
+
 * Tue Jul 15 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 4.13.3-1
 - New version 4.13.3
 
