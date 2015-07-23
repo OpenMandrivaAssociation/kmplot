@@ -7,6 +7,7 @@ Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5KDELibs4Support)
 Conflicts:	kdeedu4-devel < 4.6.90
 
 %description
@@ -20,20 +21,17 @@ high precision in correct scale.
 
 %files
 %doc COPYING COPYING.DOC TODO
-%doc %{_kde_docdir}/HTML/*/kmplot
-%{_kde_applicationsdir}/kmplot.desktop
-%{_kde_appsdir}/kmplot
-%{_kde_bindir}/kmplot
-%{_kde_datadir}/appdata/kmplot.appdata.xml
-%{_kde_datadir}/config.kcfg/kmplot.kcfg
-%{_kde_iconsdir}/*/*/apps/kmplot.*
-%{_kde_libdir}/kde4/libkmplotpart.so
-%{_kde_mandir}/man1/kmplot.1.*
-%{_kde_services}/kmplot_part.desktop
-%{_datadir}/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
-%{_datadir}/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
-%{_datadir}/dbus-1/interfaces/org.kde.kmplot.Parser.xml
-%{_datadir}/dbus-1/interfaces/org.kde.kmplot.View.xml
+%doc %{_docdir}/HTML/*/kmplot
+%{_bindir}/kmplot
+%{_datadir}/appdata/*
+%{_datadir}/config.kcfg/*
+%{_datadir}/icons/*/*/*/kmplot.*
+%{_datadir}/kservices5/kmplot_part.desktop
+%{_datadir}/kxmlgui5/*
+%{_mandir}/man1/*
+%{_libdir}/qt5/plugins/*.so
+%{_datadir}/applications/*.desktop
+%{_datadir}/dbus-1/interfaces/*.xml
 
 #----------------------------------------------------------------------------
 
@@ -45,4 +43,4 @@ high precision in correct scale.
 %ninja -C build
 
 %install
-%ninja_install_std -C build
+DESTDIR="%{buildroot}" %ninja install -C build
