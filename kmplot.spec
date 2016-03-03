@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+Patch0:		kmplot_fix_isnan.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KDELibs4Support)
 Conflicts:	kdeedu4-devel < 4.6.90
@@ -37,6 +38,7 @@ high precision in correct scale.
 
 %prep
 %setup -q
+%apply_patches
 %cmake_kde5
 
 %build
