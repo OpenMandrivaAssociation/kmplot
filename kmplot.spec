@@ -1,12 +1,11 @@
 Summary:	A mathematical function plotter
 Name:		kmplot
-Version:	15.12.3
+Version:	16.04.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		kmplot_fix_isnan_isinf.patch
+Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KDELibs4Support)
 Conflicts:	kdeedu4-devel < 4.6.90
