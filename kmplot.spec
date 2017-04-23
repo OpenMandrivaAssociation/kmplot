@@ -1,6 +1,6 @@
 Summary:	A mathematical function plotter
 Name:		kmplot
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -19,11 +19,10 @@ KmPlot supports functions with parameters and functions in polar
 coordinates. Several grid modes are possible. Plots may be printed with
 high precision in correct scale.
 
-%files
+%files -f %{name}.lang
 %doc COPYING COPYING.DOC TODO
-%doc %{_docdir}/HTML/*/kmplot
 %{_bindir}/kmplot
-%{_datadir}/appdata/*
+%{_datadir}/metainfo/*
 %{_datadir}/config.kcfg/*
 %{_datadir}/icons/*/*/*/kmplot.*
 %{_datadir}/kservices5/kmplot_part.desktop
@@ -45,3 +44,4 @@ high precision in correct scale.
 
 %install
 DESTDIR="%{buildroot}" %ninja install -C build
+%find_lang %{name} --with-html --with-man
