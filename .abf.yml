@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kmplot-17.12.1.tar.xz: 47e5d7ef9e30b175a0b1829b262f8979c635d89c
+sources:
+  kmplot-17.12.2.tar.xz: 9009be9edc159c3cf628acb49278789a17c7972a
