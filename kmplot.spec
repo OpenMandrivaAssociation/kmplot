@@ -1,14 +1,26 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	A mathematical function plotter
 Name:		kmplot
-Version:	 18.04.2
+Version:	18.04.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
 Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5PrintSupport)
+BuildRequires:	cmake(KF5Crash)
+BuildRequires:	cmake(KF5GuiAddons)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5Parts)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5KDELibs4Support)
+BuildRequires:	cmake(KF5DBusAddons)
 Conflicts:	kdeedu4-devel < 4.6.90
 
 %description
