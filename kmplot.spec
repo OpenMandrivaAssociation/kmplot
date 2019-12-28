@@ -1,12 +1,12 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	A mathematical function plotter
 Name:		kmplot
-Version:	19.11.90
+Version:	19.12.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
-Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
@@ -49,7 +49,7 @@ high precision in correct scale.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 %cmake_kde5
 
 %build
