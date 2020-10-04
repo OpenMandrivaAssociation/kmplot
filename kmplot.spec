@@ -2,7 +2,7 @@
 Summary:	A mathematical function plotter
 Name:		kmplot
 Version:	20.08.1
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
