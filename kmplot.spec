@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	A mathematical function plotter
 Name:		kmplot
-Version:	21.04.2
+Version:	21.07.90
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -33,7 +33,7 @@ coordinates. Several grid modes are possible. Plots may be printed with
 high precision in correct scale.
 
 %files -f %{name}.lang
-%doc COPYING COPYING.DOC TODO
+%doc TODO
 %{_bindir}/kmplot
 %{_datadir}/metainfo/*
 %{_datadir}/config.kcfg/*
@@ -41,7 +41,7 @@ high precision in correct scale.
 %{_datadir}/kservices5/kmplot_part.desktop
 %{_datadir}/kxmlgui5/*
 %{_mandir}/man1/*
-%{_libdir}/qt5/plugins/*.so
+%{_libdir}/qt5/plugins/kf5/parts/*.so
 %{_datadir}/applications/*.desktop
 %{_datadir}/dbus-1/interfaces/*.xml
 
