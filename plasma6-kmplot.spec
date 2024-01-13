@@ -2,7 +2,7 @@
 Summary:	A mathematical function plotter
 Name:		plasma6-kmplot
 Version:	24.01.90
-Release:	3
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
@@ -13,6 +13,10 @@ BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6PrintSupport)
+BuildRequires:  cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
+BuildRequires:  qt6-qtbase-theme-gtk3
 BuildRequires:	cmake(KF6Crash)
 BuildRequires:	cmake(KF6GuiAddons)
 BuildRequires:	cmake(KF6I18n)
@@ -20,6 +24,7 @@ BuildRequires:	cmake(KF6Parts)
 BuildRequires:	cmake(KF6WidgetsAddons)
 BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6DBusAddons)
+BuildRequires:	cmake(KF6TextWidgets)
 Conflicts:	kdeedu4-devel < 4.6.90
 
 %description
