@@ -1,8 +1,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	A mathematical function plotter
 Name:		kmplot
-Version:	23.08.4
-Release:	3
+Version:	23.08.5
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
