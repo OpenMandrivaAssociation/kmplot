@@ -1,12 +1,19 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	A mathematical function plotter
 Name:		plasma6-kmplot
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://edu.kde.org/kmplot
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/education/kmplot/-/archive/%{gitbranch}/kmplot-%{gitbranchd}.tar.bz2#/kmplot-%{git}.tar.bz2
+%else
 Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kmplot-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -50,7 +57,7 @@ high precision in correct scale.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kmplot-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kmplot-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DQT_MAJOR_VERSION=6 \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
