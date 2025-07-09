@@ -3,7 +3,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	A mathematical function plotter
-Name:		plasma6-kmplot
+Name:		kmplot
 Version:	25.04.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
