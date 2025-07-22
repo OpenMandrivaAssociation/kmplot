@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 70 ] && echo -n un; echo -n stable)
 Summary:	A mathematical function plotter
 Name:		kmplot
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -34,6 +34,11 @@ BuildRequires:	cmake(KF6DBusAddons)
 BuildRequires:	cmake(KF6TextWidgets)
 Conflicts:	kdeedu4-devel < 4.6.90
 
+%rename plasma6-kmplot
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 KmPlot is a mathematical function plotter for the KDE-Desktop.
 
@@ -43,7 +48,7 @@ KmPlot supports functions with parameters and functions in polar
 coordinates. Several grid modes are possible. Plots may be printed with
 high precision in correct scale.
 
-%files -f kmplot.lang
+%files -f %{name}.lang
 %doc TODO
 %{_bindir}/kmplot
 %{_datadir}/metainfo/*
@@ -53,19 +58,3 @@ high precision in correct scale.
 %{_libdir}/qt6/plugins/kf6/parts/*.so
 %{_datadir}/applications/*.desktop
 %{_datadir}/dbus-1/interfaces/*.xml
-
-#----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kmplot-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DQT_MAJOR_VERSION=6 \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-DESTDIR="%{buildroot}" %ninja install -C build
-%find_lang kmplot --with-html --with-man
